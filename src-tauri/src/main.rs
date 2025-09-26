@@ -148,6 +148,7 @@ struct ExportSettings {
     filename_template: Option<String>,
 }
 
+#[allow(dead_code)]
 #[derive(Serialize, Deserialize, Debug, Clone)]
 struct GitHubContent {
     name: String,
@@ -1996,7 +1997,7 @@ async fn load_and_parse_lut(
     Ok(LutParseResult { size: lut_size })
 }
 
-fn apply_window_effect(theme: String, window: impl raw_window_handle::HasWindowHandle) {
+fn apply_window_effect(_theme: String, _window: impl raw_window_handle::HasWindowHandle) {
     #[cfg(target_os = "windows")]
     {
         let color = match theme.as_str() {
